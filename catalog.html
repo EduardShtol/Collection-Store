@@ -26,174 +26,99 @@
                     <li class="nav-item"><a class="nav-link" href="order.html">Предзаказ</a></li>
                     <li class="nav-item"><a class="nav-link" href="ransom.html">Выкуп</a></li>
                 </ul>
+                <div class="nav-icons">
+                    <a href="favorites.html" class="nav-icon">
+                        <i class="far fa-heart"></i>
+                        <span class="badge favorites-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge cart-count">0</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <main class="container py-5">
+    <!-- Хлебные крошки -->
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active">Каталог</li>
+            </ol>
+        </nav>
+    </div>
+
+    <main class="container py-5 catalog-page">
         <h1 class="page-title">Каталог коллекционных моделей</h1>
         
-        <div class="row g-4">
-            <!-- Treasure Hunt -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/1treasurehunt.jpg" alt="Treasure Hunt">
-                    <h3>Treasure Hunt</h3>
-                    <p class="price">599 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
+        <!-- Поиск и фильтры -->
+        <div class="search-section">
+            <input type="text" id="searchInput" class="search-input" placeholder="🔍 Поиск по названию...">
+            
+            <div class="filters">
+                <select id="filterCategory" class="filter-select">
+                    <option value="all">Все категории</option>
+                    <option value="treasure">Treasure Hunts</option>
+                    <option value="rlk">Red Line Club</option>
+                    <option value="premium">Premium</option>
+                    <option value="special">Special</option>
+                    <option value="standard">Стандартные</option>
+                </select>
+                
+                <select id="filterSort" class="filter-select">
+                    <option value="name">По названию</option>
+                    <option value="price-asc">По цене (возрастание)</option>
+                    <option value="price-desc">По цене (убывание)</option>
+                    <option value="rating">По рейтингу</option>
+                </select>
             </div>
             
-            <!-- BMW M3 E46 -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/2RLK_BMW_M3_E46.jpg" alt="BMW M3">
-                    <h3>BMW M3 E46</h3>
-                    <p class="price">1 290 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Nissan Skyline R34 -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/3RLK_NISSAN SKYLINE R34.jpg" alt="Nissan Skyline">
-                    <h3>Nissan Skyline R34</h3>
-                    <p class="price">1 990 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Dodge Charger -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/4RLK_DODGE CHARGERRT.jpg" alt="Dodge Charger">
-                    <h3>Dodge Charger RT</h3>
-                    <p class="price">1 990 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Mitsubishi Lancer -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/5PRSPEC_Mitsubishi Lancer Evolution.jpg" alt="Mitsubishi Lancer">
-                    <h3>Mitsubishi Lancer Evo</h3>
-                    <p class="price">10 990 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Honda S2000 Premium -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/6PRSPEC_Honda S2000.jpg" alt="Honda S2000">
-                    <h3>Honda S2000 Premium</h3>
-                    <p class="price">10 990 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Honda S2000 Special -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/7SPEC_Honda s2000.jpg" alt="Honda S2000 Special">
-                    <h3>Honda S2000 Special</h3>
-                    <p class="price">7 990 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Nissan Skyline GTR 34 -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/10prem2Nissan Skyline GTR 34.jpg" alt="Nissan Skyline GTR">
-                    <h3>Nissan Skyline GTR 34</h3>
-                    <p class="price">2 990 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Ferrari F40 -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/11Ferrari F40.jpg" alt="Ferrari F40">
-                    <h3>Ferrari F40</h3>
-                    <p class="price">999 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Chevrolet Impala -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/12Chevrolet Impala 64.jpg" alt="Chevrolet Impala">
-                    <h3>Chevrolet Impala '64</h3>
-                    <p class="price">999 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Audi RS6 -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/13Audi RS6.jpg" alt="Audi RS6">
-                    <h3>Audi RS6</h3>
-                    <p class="price">999 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Ferrari SF90 -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/14Ferrari SF90.jpg" alt="Ferrari SF90">
-                    <h3>Ferrari SF90</h3>
-                    <p class="price">999 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Ferrari F40 (второй) -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/15Ferrari F40.jpg" alt="Ferrari F40">
-                    <h3>Ferrari F40</h3>
-                    <p class="price">999 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
-            
-            <!-- Ferrari 12 Cilindri -->
-            <div class="col-lg-3 col-md-4 col-sm-6">
-                <div class="product-card">
-                    <img src="cars/16Ferrari 12cilindri.jpg" alt="Ferrari 12 Cilindri">
-                    <h3>Ferrari 12 Cilindri</h3>
-                    <p class="price">999 ₽</p>
-                    <button class="btn btn-primary w-100">В корзину</button>
-                </div>
-            </div>
+            <div class="active-filters" id="activeFilters"></div>
         </div>
+        
+        <!-- Товары -->
+        <div class="row g-4" id="productsContainer"></div>
     </main>
+
+    <!-- Кнопка переключения темы -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
 
     <!-- Кнопка "На главную" -->
     <a href="index.html" class="back-to-home" title="На главную">
         <i class="fas fa-home"></i>
     </a>
 
+    <!-- Чат поддержки -->
+    <div class="chat-widget">
+        <button class="chat-toggle">
+            <i class="fas fa-comment"></i>
+        </button>
+        <div class="chat-window">
+            <div class="chat-header">
+                <i class="fas fa-headset me-2"></i>
+                Чат с поддержкой
+            </div>
+            <div class="chat-messages">
+                <div class="message support">
+                    <div class="message-bubble">
+                        Здравствуйте! Чем мы можем вам помочь?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Введите сообщение...">
+                <button class="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Плавная прокрутка для кнопки "На главную"
-        document.querySelector('.back-to-home').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            setTimeout(function() {
-                window.location.href = 'index.html';
-            }, 300);
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
