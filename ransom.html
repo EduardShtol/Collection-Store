@@ -3,125 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Предзаказ Hot Wheels из Америки и Китая</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>Выкуп коллекционных моделей</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- НАШ НОВЫЙ CSS ФАЙЛ -->
-    <link href="style.css" rel="stylesheet">
-    <!-- ВЕСЬ СТАРЫЙ CSS ВНУТРИ <style> НУЖНО УДАЛИТЬ! -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="fas fa-car"></i> Hot Wheels</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Предзаказ</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ransom.html">Выкуп</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- НАВИГАЦИОННОЕ МЕНЮ (с логотипом) -->
-<nav class="navbar navbar-expand-lg fixed-top">
-    <div class="container">
-        <!-- Логотип (текстовый + иконка) -->
-        <a href="main.html">
-    <img src="log.jpg" alt="Логотип" style="max-height: 50px;">
-</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</nav>
-
-<main>
-    <!-- Заголовок страницы выкупа -->
-    <section class="container text-center py-4">
-        <h1 class="display-5 fw-bold mt-3">Выкуп редких и коллекционных моделей</h1>
-        <p class="lead text-secondary">Заполните форму — мы быстро оценим ваше предложение</p>
-    </section>
-
-    <!-- Форма выкупа -->
-    <section class="container pb-5">
+    <main class="container py-5">
+        <h1 class="page-title">Выкуп редких и коллекционных моделей</h1>
+        
         <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="ransom-form">
-                    <form action="#" method="post" enctype="multipart/form-data">
-                        <!-- Название модели -->
+            <div class="col-md-8">
+                <div class="form-container">
+                    <form>
                         <div class="mb-4">
-                            <label for="model-name" class="form-label"><i class="fas fa-tag me-2" style="color:var(--hw-orange);"></i>Название модели</label>
-                            <input type="text" class="form-control" id="model-name" placeholder="например: '67 Camaro, Treasure Hunt Super" required>
+                            <label class="form-label">Название модели</label>
+                            <input type="text" class="form-control" placeholder="Например: Treasure Hunt Super" required>
                         </div>
-
-                        <!-- Год выпуска и коллекция в одной строке -->
+                        
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <label for="model-year" class="form-label"><i class="fas fa-calendar me-2" style="color:var(--hw-orange);"></i>Год выпуска</label>
-                                <input type="text" class="form-control" id="model-year" placeholder="например: 2020, 1998">
+                                <label class="form-label">Год выпуска</label>
+                                <input type="text" class="form-control" placeholder="2020">
                             </div>
                             <div class="col-md-6 mb-4">
-                                <label for="collection" class="form-label"><i class="fas fa-layer-group me-2" style="color:var(--hw-orange);"></i>Коллекция / серия</label>
-                                <input type="text" class="form-control" id="collection" placeholder="например: Japan Historics, HW Race">
+                                <label class="form-label">Коллекция</label>
+                                <input type="text" class="form-control" placeholder="Japan Historics">
                             </div>
                         </div>
-
-                        <!-- Загрузка фотографий -->
+                        
                         <div class="mb-4">
-                            <label for="photos" class="form-label"><i class="fas fa-camera me-2" style="color:var(--hw-orange);"></i>Фотографии модели (можно несколько)</label>
-                            <input type="file" class="form-control" id="photos" name="photos[]" multiple accept="image/*">
-                            <div class="file-hint">Загрузите чёткие фото модели, упаковки (если есть), дефектов. Это поможет точнее оценить.</div>
+                            <label class="form-label">Фотографии модели</label>
+                            <input type="file" class="form-control" multiple accept="image/*">
+                            <small class="text-muted">Загрузите чёткие фото модели и упаковки</small>
                         </div>
-
-                        <!-- Предлагаемая цена -->
+                        
                         <div class="mb-4">
-                            <label for="price" class="form-label"><i class="fas fa-ruble-sign me-2" style="color:var(--hw-orange);"></i>Желаемая цена (₽)</label>
-                            <input type="number" class="form-control" id="price" placeholder="Например: 5000" min="0" step="100">
+                            <label class="form-label">Желаемая цена (₽)</label>
+                            <input type="number" class="form-control" placeholder="5000">
                         </div>
-
-                        <!-- Контактные данные продавца -->
+                        
                         <div class="row">
                             <div class="col-md-6 mb-4">
-                                <label for="seller-name" class="form-label"><i class="fas fa-user me-2" style="color:var(--hw-orange);"></i>Ваше имя</label>
-                                <input type="text" class="form-control" id="seller-name" placeholder="Иван Иванов" required>
+                                <label class="form-label">Ваше имя</label>
+                                <input type="text" class="form-control" required>
                             </div>
                             <div class="col-md-6 mb-4">
-                                <label for="seller-contact" class="form-label"><i class="fas fa-phone me-2" style="color:var(--hw-orange);"></i>Телефон или Email</label>
-                                <input type="text" class="form-control" id="seller-contact" placeholder="+7 (___) ... или email@example.com" required>
+                                <label class="form-label">Телефон или Email</label>
+                                <input type="text" class="form-control" required>
                             </div>
                         </div>
-
-                        <!-- Кнопка отправки -->
-                        <div class="text-center mt-4">
-                            <button type="submit" class="btn btn-outline-hw px-5">Отправить предложение <i class="fas fa-paper-plane ms-2"></i></button>
-                        </div>
-
-                        <p class="text-muted small text-center mt-4 mb-0">Мы свяжемся с вами в течение 24 часов для уточнения деталей и финальной оценки.</p>
+                        
+                        <button type="submit" class="btn btn-primary w-100">Отправить предложение</button>
+                        
+                        <p class="text-muted text-center mt-4 small">
+                            Мы свяжемся с вами в течение 24 часов
+                        </p>
                     </form>
                 </div>
             </div>
         </div>
-    </section>
-
-
-    <!-- Контактная информация (для удобства) -->
-    <section id="contacts" class="container py-4">
-        <h2 class="section-title">Контакты</h2>
-        <div class="row justify-content-center">
-            <div class="col-lg-8">
-                <div class="contact-info text-center">
-                    <i class="fas fa-store-alt fa-3x mb-4" style="color:var(--hw-orange);"></i>
-                    <p class="fs-4 mb-3">ИП Сафиханов Камиль Рустамович</p>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <i class="fas fa-phone-alt me-2" style="color:var(--hw-orange);"></i>
-                            <a href="tel:+79857392771">8 (985) 739-27-71</a>
-                        </div>
-                        <div class="col-md-6 mb-3">
-                            <i class="fas fa-envelope me-2" style="color:var(--hw-orange);"></i>
-                            <a href="mailto:Ksafikhanov@list.ru">Ksafikhanov@list.ru</a>
-                        </div>
+        
+        <!-- Контакты -->
+        <section class="contact-section mt-5">
+            <div class="container text-center">
+                <h2>Контакты</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <p><i class="fas fa-phone"></i> <a href="tel:+79857392771">8 (985) 739-27-71</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:Ksafikhanov@list.ru">Ksafikhanov@list.ru</a></p>
+                        <p><i class="fas fa-clock"></i> Ежедневно с 10:00 до 21:00</p>
                     </div>
-                    <hr class="my-4 bg-white opacity-25">
-                    <p class="mb-0"><i class="fas fa-clock me-2"></i> Ежедневно с 10:00 до 21:00</p>
                 </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+    </main>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
