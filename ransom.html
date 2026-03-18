@@ -26,9 +26,29 @@
                     <li class="nav-item"><a class="nav-link" href="order.html">Предзаказ</a></li>
                     <li class="nav-item"><a class="nav-link active" href="ransom.html">Выкуп</a></li>
                 </ul>
+                <div class="nav-icons">
+                    <a href="favorites.html" class="nav-icon">
+                        <i class="far fa-heart"></i>
+                        <span class="badge favorites-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge cart-count">0</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Хлебные крошки -->
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Главная</a></li>
+                <li class="breadcrumb-item active">Выкуп</li>
+            </ol>
+        </nav>
+    </div>
 
     <main class="container py-5">
         <h1 class="page-title">Выкуп редких и коллекционных моделей</h1>
@@ -51,6 +71,17 @@
                                 <label class="form-label">Коллекция</label>
                                 <input type="text" class="form-control" placeholder="Japan Historics">
                             </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="form-label">Состояние</label>
+                            <select class="form-control">
+                                <option>В идеальном состоянии (карточка)</option>
+                                <option>Хорошее состояние</option>
+                                <option>Среднее состояние</option>
+                                <option>Битая упаковка</option>
+                                <option>Без упаковки</option>
+                            </select>
                         </div>
                         
                         <div class="mb-4">
@@ -111,29 +142,49 @@
         </section>
     </main>
 
+    <!-- Кнопка переключения темы -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Кнопка "На главную" -->
     <a href="index.html" class="back-to-home" title="На главную">
         <i class="fas fa-home"></i>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Плавная прокрутка для кнопки "На главную"
-        document.querySelector('.back-to-home').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-            setTimeout(function() {
-                window.location.href = 'index.html';
-            }, 300);
-        });
+    <!-- Чат поддержки -->
+    <div class="chat-widget">
+        <button class="chat-toggle">
+            <i class="fas fa-comment"></i>
+        </button>
+        <div class="chat-window">
+            <div class="chat-header">
+                <i class="fas fa-headset me-2"></i>
+                Чат с поддержкой
+            </div>
+            <div class="chat-messages">
+                <div class="message support">
+                    <div class="message-bubble">
+                        Здравствуйте! Чем мы можем вам помочь?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Введите сообщение...">
+                <button class="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
-        // Обработка формы
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
         document.getElementById('ransomForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Спасибо! Мы рассмотрим ваше предложение и свяжемся с вами.');
+            showNotification('Спасибо! Мы рассмотрим ваше предложение и свяжемся с вами.', 'success');
+            this.reset();
         });
     </script>
 </body>
