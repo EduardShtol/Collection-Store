@@ -5,213 +5,59 @@ let currentTheme = localStorage.getItem('theme') || 'light';
 
 // ===== БАЗА ДАННЫХ ТОВАРОВ =====
 const products = [
-    {
-        id: 1,
-        name: 'Treasure Hunt',
-        price: 599,
-        image: 'cars/1treasurehunt.jpg',
-        category: 'treasure',
-        description: 'Редкая коллекционная модель',
-        rating: 4.8,
-        reviews: 15
-    },
-    {
-        id: 2,
-        name: 'BMW M3 E46',
-        price: 1290,
-        image: 'cars/2RLK_BMW_M3_E46.jpg',
-        category: 'rlk',
-        description: 'Red line club, лимитированная серия',
-        rating: 4.9,
-        reviews: 23
-    },
-    {
-        id: 3,
-        name: 'Nissan Skyline R34',
-        price: 1990,
-        image: 'cars/3RLK_NISSAN SKYLINE R34.jpg',
-        category: 'rlk',
-        description: 'Red line club',
-        rating: 5.0,
-        reviews: 31
-    },
-    {
-        id: 4,
-        name: 'Dodge Charger RT',
-        price: 1990,
-        image: 'cars/4RLK_DODGE CHARGERRT.jpg',
-        category: 'rlk',
-        description: 'Red line club',
-        rating: 4.7,
-        reviews: 12
-    },
-    {
-        id: 5,
-        name: 'Mitsubishi Lancer Evo',
-        price: 10990,
-        image: 'cars/5PRSPEC_Mitsubishi Lancer Evolution.jpg',
-        category: 'premium',
-        description: 'Premium Special',
-        rating: 5.0,
-        reviews: 8
-    },
-    {
-        id: 6,
-        name: 'Honda S2000 Premium',
-        price: 10990,
-        image: 'cars/6PRSPEC_Honda S2000.jpg',
-        category: 'premium',
-        description: 'Premium Special',
-        rating: 4.9,
-        reviews: 11
-    },
-    {
-        id: 7,
-        name: 'Honda S2000 Special',
-        price: 7990,
-        image: 'cars/7SPEC_Honda s2000.jpg',
-        category: 'special',
-        description: 'Special edition',
-        rating: 4.6,
-        reviews: 7
-    },
-    {
-        id: 8,
-        name: 'Nissan Skyline GTR 34',
-        price: 2990,
-        image: 'cars/10prem2Nissan Skyline GTR 34.jpg',
-        category: 'premium',
-        description: 'Premium edition',
-        rating: 4.8,
-        reviews: 19
-    },
-    {
-        id: 9,
-        name: 'Ferrari F40',
-        price: 999,
-        image: 'cars/11Ferrari F40.jpg',
-        category: 'standard',
-        description: 'Классическая модель',
-        rating: 4.5,
-        reviews: 42
-    },
-    {
-        id: 10,
-        name: 'Chevrolet Impala 64',
-        price: 999,
-        image: 'cars/12Chevrolet Impala 64.jpg',
-        category: 'standard',
-        description: 'Классический американский автомобиль',
-        rating: 4.7,
-        reviews: 28
-    },
-    {
-        id: 11,
-        name: 'Audi RS6',
-        price: 999,
-        image: 'cars/13Audi RS6.jpg',
-        category: 'standard',
-        description: 'Немецкий универсал',
-        rating: 4.6,
-        reviews: 17
-    },
-    {
-        id: 12,
-        name: 'Ferrari SF90',
-        price: 999,
-        image: 'cars/14Ferrari SF90.jpg',
-        category: 'standard',
-        description: 'Гибридный суперкар',
-        rating: 4.9,
-        reviews: 9
-    },
-    {
-        id: 13,
-        name: 'Ferrari F40 (2)',
-        price: 999,
-        image: 'cars/15Ferrari F40.jpg',
-        category: 'standard',
-        description: 'Классическая модель',
-        rating: 4.5,
-        reviews: 42
-    },
-    {
-        id: 14,
-        name: 'Ferrari 12 Cilindri',
-        price: 999,
-        image: 'cars/16Ferrari 12cilindri.jpg',
-        category: 'standard',
-        description: 'Новая модель',
-        rating: 5.0,
-        reviews: 5
-    }
+    { id: 1, name: 'Treasure Hunt', price: 599, image: 'cars/1treasurehunt.jpg', category: 'treasure', description: 'Редкая коллекционная модель', rating: 4.8, reviews: 15 },
+    { id: 2, name: 'BMW M3 E46', price: 1290, image: 'cars/2RLK_BMW_M3_E46.jpg', category: 'rlk', description: 'Red line club, лимитированная серия', rating: 4.9, reviews: 23 },
+    { id: 3, name: 'Nissan Skyline R34', price: 1990, image: 'cars/3RLK_NISSAN SKYLINE R34.jpg', category: 'rlk', description: 'Red line club', rating: 5.0, reviews: 31 },
+    { id: 4, name: 'Dodge Charger RT', price: 1990, image: 'cars/4RLK_DODGE CHARGERRT.jpg', category: 'rlk', description: 'Red line club', rating: 4.7, reviews: 12 },
+    { id: 5, name: 'Mitsubishi Lancer Evo', price: 10990, image: 'cars/5PRSPEC_Mitsubishi Lancer Evolution.jpg', category: 'premium', description: 'Premium Special', rating: 5.0, reviews: 8 },
+    { id: 6, name: 'Honda S2000 Premium', price: 10990, image: 'cars/6PRSPEC_Honda S2000.jpg', category: 'premium', description: 'Premium Special', rating: 4.9, reviews: 11 },
+    { id: 7, name: 'Honda S2000 Special', price: 7990, image: 'cars/7SPEC_Honda s2000.jpg', category: 'special', description: 'Special edition', rating: 4.6, reviews: 7 },
+    { id: 8, name: 'Nissan Skyline GTR 34', price: 2990, image: 'cars/10prem2Nissan Skyline GTR 34.jpg', category: 'premium', description: 'Premium edition', rating: 4.8, reviews: 19 },
+    { id: 9, name: 'Ferrari F40', price: 999, image: 'cars/11Ferrari F40.jpg', category: 'standard', description: 'Классическая модель', rating: 4.5, reviews: 42 },
+    { id: 10, name: 'Chevrolet Impala 64', price: 999, image: 'cars/12Chevrolet Impala 64.jpg', category: 'standard', description: 'Классический американский автомобиль', rating: 4.7, reviews: 28 },
+    { id: 11, name: 'Audi RS6', price: 999, image: 'cars/13Audi RS6.jpg', category: 'standard', description: 'Немецкий универсал', rating: 4.6, reviews: 17 },
+    { id: 12, name: 'Ferrari SF90', price: 999, image: 'cars/14Ferrari SF90.jpg', category: 'standard', description: 'Гибридный суперкар', rating: 4.9, reviews: 9 },
+    { id: 13, name: 'Ferrari F40 (2)', price: 999, image: 'cars/15Ferrari F40.jpg', category: 'standard', description: 'Классическая модель', rating: 4.5, reviews: 42 },
+    { id: 14, name: 'Ferrari 12 Cilindri', price: 999, image: 'cars/16Ferrari 12cilindri.jpg', category: 'standard', description: 'Новая модель', rating: 5.0, reviews: 5 }
 ];
 
-// ===== ИНИЦИАЛИЗАЦИЯ ПРИ ЗАГРУЗКЕ =====
+// ===== ИНИЦИАЛИЗАЦИЯ =====
 document.addEventListener('DOMContentLoaded', function() {
-    // Убираем загрузочную анимацию
     setTimeout(() => {
         const loading = document.querySelector('.loading');
         if (loading) loading.style.display = 'none';
     }, 1000);
 
-    // Устанавливаем тему
     setTheme(currentTheme);
-
-    // Обновляем счетчики
     updateCounters();
 
-    // Инициализируем компоненты в зависимости от страницы
     if (document.querySelector('.catalog-page')) {
-        initCatalog();
-    }
-    
-    if (document.querySelector('.product-page')) {
-        initProductPage();
+        renderProducts(products);
+        setupCatalogListeners();
     }
     
     if (document.querySelector('.cart-page')) {
-        initCartPage();
+        renderCart();
     }
     
     if (document.querySelector('.favorites-page')) {
-        initFavoritesPage();
+        renderFavorites();
     }
 
-    // Инициализируем чат
-    initChat();
+    if (document.querySelector('.product-page')) {
+        initProductPage();
+    }
 
-    // Добавляем обработчики для кнопок
     setupEventListeners();
 });
 
 // ===== НАСТРОЙКА ОБРАБОТЧИКОВ =====
 function setupEventListeners() {
-    // Кнопка темы
     const themeBtn = document.querySelector('.theme-toggle');
     if (themeBtn) {
         themeBtn.addEventListener('click', toggleTheme);
     }
 
-    // Поиск
-    const searchInput = document.getElementById('searchInput');
-    if (searchInput) {
-        searchInput.addEventListener('input', debounce(handleSearch, 300));
-    }
-
-    // Фильтры
-    const filterCategory = document.getElementById('filterCategory');
-    const filterSort = document.getElementById('filterSort');
-    
-    if (filterCategory) {
-        filterCategory.addEventListener('change', applyFilters);
-    }
-    
-    if (filterSort) {
-        filterSort.addEventListener('change', applyFilters);
-    }
-
-    // Кнопки "Наверх" и "На главную"
     document.querySelectorAll('.back-to-home').forEach(btn => {
         btn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -222,9 +68,29 @@ function setupEventListeners() {
             }
         });
     });
+
+    initChat();
 }
 
-// ===== РАБОТА С ТЕМОЙ =====
+function setupCatalogListeners() {
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', debounce(handleSearch, 300));
+    }
+
+    const filterCategory = document.getElementById('filterCategory');
+    const filterSort = document.getElementById('filterSort');
+    
+    if (filterCategory) {
+        filterCategory.addEventListener('change', applyFilters);
+    }
+    
+    if (filterSort) {
+        filterSort.addEventListener('change', applyFilters);
+    }
+}
+
+// ===== ТЕМА =====
 function toggleTheme() {
     currentTheme = currentTheme === 'light' ? 'dark' : 'light';
     setTheme(currentTheme);
@@ -253,7 +119,7 @@ function showNotification(message, type = 'success') {
     }, 3000);
 }
 
-// ===== РАБОТА С КОРЗИНОЙ =====
+// ===== КОРЗИНА =====
 function addToCart(productId, quantity = 1) {
     const product = products.find(p => p.id === productId);
     if (!product) return;
@@ -263,10 +129,7 @@ function addToCart(productId, quantity = 1) {
     if (existingItem) {
         existingItem.quantity += quantity;
     } else {
-        cart.push({
-            ...product,
-            quantity: quantity
-        });
+        cart.push({ ...product, quantity: quantity });
     }
 
     localStorage.setItem('cart', JSON.stringify(cart));
@@ -278,7 +141,6 @@ function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCounters();
-    
     if (document.querySelector('.cart-page')) {
         renderCart();
     }
@@ -314,7 +176,7 @@ function updateCounters() {
     });
 }
 
-// ===== РАБОТА С ИЗБРАННЫМ =====
+// ===== ИЗБРАННОЕ =====
 function toggleFavorite(productId) {
     const index = favorites.indexOf(productId);
     const product = products.find(p => p.id === productId);
@@ -330,7 +192,6 @@ function toggleFavorite(productId) {
     localStorage.setItem('favorites', JSON.stringify(favorites));
     updateCounters();
     
-    // Обновляем иконки на странице
     document.querySelectorAll(`.favorite-btn[data-id="${productId}"]`).forEach(btn => {
         btn.classList.toggle('active');
         btn.innerHTML = index === -1 ? '<i class="fas fa-heart"></i>' : '<i class="far fa-heart"></i>';
@@ -342,10 +203,6 @@ function isFavorite(productId) {
 }
 
 // ===== КАТАЛОГ =====
-function initCatalog() {
-    renderProducts(products);
-}
-
 function renderProducts(productsToRender) {
     const container = document.getElementById('productsContainer');
     if (!container) return;
@@ -355,10 +212,6 @@ function renderProducts(productsToRender) {
             <div class="product-card" onclick="window.location.href='product.html?id=${product.id}'">
                 <img src="${product.image}" alt="${product.name}" loading="lazy">
                 <h3>${product.name}</h3>
-                <div class="rating">
-                    ${generateStars(product.rating)}
-                    <span>(${product.reviews})</span>
-                </div>
                 <p class="price">${product.price.toLocaleString()} ₽</p>
                 <div class="card-buttons">
                     <button class="card-btn favorite-btn ${isFavorite(product.id) ? 'active' : ''}" 
@@ -373,21 +226,6 @@ function renderProducts(productsToRender) {
             </div>
         </div>
     `).join('');
-}
-
-function generateStars(rating) {
-    const fullStars = Math.floor(rating);
-    const halfStar = rating % 1 >= 0.5;
-    let stars = '';
-    
-    for (let i = 0; i < fullStars; i++) {
-        stars += '<i class="fas fa-star"></i>';
-    }
-    if (halfStar) {
-        stars += '<i class="fas fa-star-half-alt"></i>';
-    }
-    
-    return `<div class="stars">${stars}</div>`;
 }
 
 function handleSearch(e) {
@@ -405,12 +243,10 @@ function applyFilters() {
     
     let filtered = [...products];
     
-    // Фильтр по категории
     if (category && category !== 'all') {
         filtered = filtered.filter(p => p.category === category);
     }
     
-    // Сортировка
     if (sort) {
         switch(sort) {
             case 'price-asc':
@@ -418,9 +254,6 @@ function applyFilters() {
                 break;
             case 'price-desc':
                 filtered.sort((a, b) => b.price - a.price);
-                break;
-            case 'rating':
-                filtered.sort((a, b) => b.rating - a.rating);
                 break;
             case 'name':
                 filtered.sort((a, b) => a.name.localeCompare(b.name));
@@ -443,75 +276,7 @@ function debounce(func, wait) {
     };
 }
 
-// ===== СТРАНИЦА ТОВАРА =====
-function initProductPage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = parseInt(urlParams.get('id'));
-    const product = products.find(p => p.id === productId);
-    
-    if (!product) {
-        window.location.href = 'catalog.html';
-        return;
-    }
-    
-    renderProductPage(product);
-}
-
-function renderProductPage(product) {
-    document.getElementById('productImage').src = product.image;
-    document.getElementById('productName').textContent = product.name;
-    document.getElementById('productPrice').textContent = `${product.price.toLocaleString()} ₽`;
-    document.getElementById('productDescription').textContent = product.description;
-    document.getElementById('productRating').innerHTML = generateStars(product.rating);
-    document.getElementById('ratingCount').textContent = `${product.reviews} отзывов`;
-    
-    // Загружаем похожие товары
-    loadSimilarProducts(product);
-    
-    // Обработчики кнопок
-    document.getElementById('addToCartBtn').addEventListener('click', () => {
-        const quantity = parseInt(document.getElementById('quantity').value);
-        addToCart(product.id, quantity);
-    });
-    
-    document.getElementById('favoriteBtn').addEventListener('click', () => {
-        toggleFavorite(product.id);
-    });
-    
-    // Обработчики количества
-    document.getElementById('decreaseQty').addEventListener('click', () => {
-        const input = document.getElementById('quantity');
-        if (input.value > 1) input.value = parseInt(input.value) - 1;
-    });
-    
-    document.getElementById('increaseQty').addEventListener('click', () => {
-        const input = document.getElementById('quantity');
-        input.value = parseInt(input.value) + 1;
-    });
-}
-
-function loadSimilarProducts(product) {
-    const similar = products
-        .filter(p => p.category === product.category && p.id !== product.id)
-        .slice(0, 4);
-    
-    const container = document.getElementById('similarProducts');
-    container.innerHTML = similar.map(p => `
-        <div class="col-md-3 col-sm-6">
-            <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'">
-                <img src="${p.image}" alt="${p.name}">
-                <h4>${p.name}</h4>
-                <p class="price">${p.price.toLocaleString()} ₽</p>
-            </div>
-        </div>
-    `).join('');
-}
-
 // ===== КОРЗИНА =====
-function initCartPage() {
-    renderCart();
-}
-
 function renderCart() {
     const container = document.getElementById('cartItems');
     const summary = document.getElementById('cartSummary');
@@ -552,10 +317,11 @@ function renderCart() {
     
     const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
     document.getElementById('cartTotal').textContent = `${total.toLocaleString()} ₽`;
+    document.getElementById('cartItemsCount').textContent = cart.reduce((sum, item) => sum + item.quantity, 0);
 }
 
 // ===== ИЗБРАННОЕ =====
-function initFavoritesPage() {
+function renderFavorites() {
     const container = document.getElementById('favoritesContainer');
     
     if (favorites.length === 0) {
@@ -593,7 +359,64 @@ function initFavoritesPage() {
     `).join('');
 }
 
-// ===== ЧАТ ПОДДЕРЖКИ =====
+// ===== СТРАНИЦА ТОВАРА =====
+function initProductPage() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const productId = parseInt(urlParams.get('id'));
+    const product = products.find(p => p.id === productId);
+    
+    if (!product) {
+        window.location.href = 'catalog.html';
+        return;
+    }
+    
+    document.getElementById('productImage').src = product.image;
+    document.getElementById('productName').textContent = product.name;
+    document.getElementById('productPrice').textContent = `${product.price.toLocaleString()} ₽`;
+    document.getElementById('productDescription').textContent = product.description;
+    
+    document.getElementById('addToCartBtn').addEventListener('click', () => {
+        const quantity = parseInt(document.getElementById('quantity').value);
+        addToCart(product.id, quantity);
+    });
+    
+    document.getElementById('favoriteBtn').addEventListener('click', () => {
+        toggleFavorite(product.id);
+    });
+    
+    document.getElementById('decreaseQty').addEventListener('click', () => {
+        const input = document.getElementById('quantity');
+        if (input.value > 1) input.value = parseInt(input.value) - 1;
+    });
+    
+    document.getElementById('increaseQty').addEventListener('click', () => {
+        const input = document.getElementById('quantity');
+        input.value = parseInt(input.value) + 1;
+    });
+    
+    loadSimilarProducts(product);
+}
+
+function loadSimilarProducts(product) {
+    const similar = products
+        .filter(p => p.category === product.category && p.id !== product.id)
+        .slice(0, 4);
+    
+    const container = document.getElementById('similarProducts');
+    if (!container) return;
+    
+    container.innerHTML = similar.map(p => `
+        <div class="col-md-3 col-sm-6">
+            <div class="product-card" onclick="window.location.href='product.html?id=${p.id}'">
+                <img src="${p.image}" alt="${p.name}">
+                <h4>${p.name}</h4>
+                <p class="price">${p.price.toLocaleString()} ₽</p>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ===== ЧАТ =====
 function initChat() {
     const chatToggle = document.querySelector('.chat-toggle');
     const chatWindow = document.querySelector('.chat-window');
@@ -611,11 +434,9 @@ function initChat() {
         const text = chatInput.value.trim();
         if (!text) return;
         
-        // Добавляем сообщение пользователя
         addMessage(text, 'user');
         chatInput.value = '';
         
-        // Ответ поддержки
         setTimeout(() => {
             addMessage('Спасибо за сообщение! Мы ответим вам в ближайшее время.', 'support');
         }, 1000);
@@ -629,64 +450,22 @@ function initChat() {
         chatMessages.scrollTop = chatMessages.scrollHeight;
     }
     
-    chatSend.addEventListener('click', sendMessage);
-    chatInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') sendMessage();
-    });
-}
-
-// ===== ХЛЕБНЫЕ КРОШКИ =====
-function updateBreadcrumbs() {
-    const path = window.location.pathname.split('/').pop();
-    const breadcrumb = document.querySelector('.breadcrumb');
-    if (!breadcrumb) return;
-    
-    let html = '<li class="breadcrumb-item"><a href="index.html">Главная</a></li>';
-    
-    switch(path) {
-        case 'catalog.html':
-            html += '<li class="breadcrumb-item active">Каталог</li>';
-            break;
-        case 'product.html':
-            html += '<li class="breadcrumb-item"><a href="catalog.html">Каталог</a></li>';
-            html += '<li class="breadcrumb-item active">Товар</li>';
-            break;
-        case 'cart.html':
-            html += '<li class="breadcrumb-item active">Корзина</li>';
-            break;
-        case 'favorites.html':
-            html += '<li class="breadcrumb-item active">Избранное</li>';
-            break;
+    if (chatSend) {
+        chatSend.addEventListener('click', sendMessage);
     }
     
-    breadcrumb.innerHTML = html;
-}
-
-// ===== БЕСКОНЕЧНАЯ ПРОКРУТКА =====
-let currentPage = 1;
-let loading = false;
-
-window.addEventListener('scroll', () => {
-    if (document.querySelector('.catalog-page')) {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1000) {
-            if (!loading) {
-                loading = true;
-                loadMoreProducts();
-            }
-        }
+    if (chatInput) {
+        chatInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMessage();
+        });
     }
-});
-
-function loadMoreProducts() {
-    // Имитация загрузки
-    setTimeout(() => {
-        currentPage++;
-        loading = false;
-    }, 1000);
 }
 
-// ===== ЭКСПОРТ ФУНКЦИЙ ДЛЯ ГЛОБАЛЬНОГО ИСПОЛЬЗОВАНИЯ =====
+// ===== ГЛОБАЛЬНЫЕ ФУНКЦИИ =====
 window.addToCart = addToCart;
 window.removeFromCart = removeFromCart;
 window.updateCartQuantity = updateCartQuantity;
 window.toggleFavorite = toggleFavorite;
+window.showNotification = showNotification;
+window.products = products;
+window.isFavorite = isFavorite;
