@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Горячее Колесо | Коллекционные машинки</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- НАШ НОВЫЙ CSS ФАЙЛ -->
+    <link href="style.css" rel="stylesheet">
+    <!-- ВЕСЬ СТАРЫЙ CSS ВНУТРИ <style> НУЖНО УДАЛИТЬ! -->
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <!-- Логотип (текстовый + иконка) -->
+         <a href="main.html" class="pull-left"><img src="log.jpg" class="img-fluid"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain" aria-controls="navbarMain" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarMain">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" href="#showcase">Стенд машинок</a></li>
+                <li class="nav-item"><a class="nav-link" href="#sale">Продажа</a></li>
+                <li class="nav-item"><a class="nav-link" href="#preorder">Предзаказ</a></li>
+                <li class="nav-item"><a class="nav-link" href="#rare">Выкуп редких</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contacts">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main>
+
+    <!-- Короткий приветственный блок  -->
+    <section class="container text-center py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <span class="badge-hotwheels mb-3"><i class="fas fa-flame me-1"></i>since 2024</span>
+                <h1 class="display-4 fw-bold mb-3">Машинки Hot Wheels<br> <span style="color:var(--hw-orange);">для коллекционеров и детей</span></h1>
+                <p class="lead text-secondary">Продажа, предзаказ из Америки и Китая, выкуп редких моделей. Более 500 наименований в наличии.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 2: Продажа машинок (карточки с ценами) -->
+    <section id="sale" class="container py-5 bg-light rounded-5">
+        <h2 class="section-title">Продажа машинок</h2>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="cars/1treasurehunt.jpg" class="card-img-top" alt="Mario Kart">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">Treasure hunt</h5>
+                            <span class="badge bg-success">в наличии</span>
+                        </div>
+                        <p class="card-text"></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold" style="color:var(--hw-orange);">599 ₽</span>
+                            <a href="#" class="btn btn-outline-hw btn-sm">Купить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="cars/2RLK_BMW_M3_E46.jpg" class="card-img-top" alt="Ford GT40">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">BMW M3 E46</h5>
+                            <span class="badge bg-warning text-dark">2 шт</span>
+                        </div>
+                        <p class="card-text">Red line club(RLK), лимитированная серия.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold" style="color:var(--hw-orange);">1 290 ₽</span>
+                            <a href="#" class="btn btn-outline-hw btn-sm">Купить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="card h-100">
+                    <img src="cars/3RLK_NISSAN SKYLINE R34.jpg" class="card-img-top" alt="Batmobile">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <h5 class="card-title mb-0">NISSAN SKYLINE R34</h5>
+                            <span class="badge bg-danger">эксклюзив</span>
+                        </div>
+                        <p class="card-text">Red line club(RLK)</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold" style="color:var(--hw-orange);">1 990 ₽</span>
+                            <a href="#" class="btn btn-outline-hw btn-sm">Купить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-5">
+            <a href="catalog.html" class="btn btn-outline-hw px-5 py-3">Смотреть весь каталог <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 3: Предзаказ из Америки/Китая -->
+    <section id="preorder" class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="cars/10prem2Nissan Skyline GTR 34.jpg" alt="Предзаказ" class="img-fluid rounded-4 shadow">
+            </div>
+            <div class="col-lg-6">
+                <div class="service-block">
+                    <i class="fas fa-globe-asia fa-3x"></i>
+                    <h3 class="fw-bold mb-3">Предзаказ из Америки / Китая</h3>
+                    <p class="mb-4 fs-5">Мы привозим новинки Hot Wheels напрямую из США и Китая. Оформляйте предзаказ на модели, которые ещё не поступили в Россию.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> Срок доставки 14–21 день</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> Фиксированная цена в рублях</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> Любые эксклюзивы: Walmart, Target, Amazon</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> От 2 недель до получения</li>
+                    </ul>
+                    <a href="order.html" class="btn btn-outline-hw mt-3">Узнать условия</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ 4: Выкуп редких и коллекционных моделей -->
+    <section id="rare" class="container py-5 bg-light rounded-5">
+        <div class="row align-items-center flex-row-reverse">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <img src="cars/9prem.jpg" alt="Редкие модели" class="img-fluid rounded-4 shadow">
+            </div>
+            <div class="col-lg-6">
+                <div class="service-block">
+                    <i class="fas fa-gem fa-3x"></i>
+                    <h3 class="fw-bold mb-3">Выкуп редких и коллекционных моделей</h3>
+                    <p class="mb-4 fs-5">Если у вас есть редкие Hot Wheels, Treasure Hunts, супер-трежери или старые коллекции — мы готовы выкупить их по высокой цене.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> Оценка по фото за 1 час</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> Выплата наличными или переводом</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> Выезд оценщика по Москве</li>
+                        <li class="mb-2"><i class="fas fa-check-circle me-2" style="color:var(--hw-orange);"></i> Покупаем даже битые упаковки</li>
+                    </ul>
+                    <a href="ransom.html" class="btn btn-outline-hw mt-3">Предложить модель</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- СЕКЦИЯ КОНТАКТЫ (с данными из ТЗ) -->
+    <section id="contacts" class="container py-4">
+        <h2 class="section-title">Контакты</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="contact-info text-center">
+                    <i class="fas fa-store-alt fa-3x mb-4" style="color:var(--hw-orange);"></i>
+                    <p class="fs-4 mb-3">ИП Сафиханов Камиль Рустамович</p>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <i class="fas fa-phone-alt me-2" style="color:var(--hw-orange);"></i>
+                            <a href="tel:+79857392771">8 (985) 739-27-71</a>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <i class="fas fa-envelope me-2" style="color:var(--hw-orange);"></i>
+                            <a href="mailto:Ksafikhanov@list.ru">Ksafikhanov@list.ru</a>
+                        </div>
+                    </div>
+                    <hr class="my-4 bg-white opacity-25">
+                    <p class="mb-0"><i class="fas fa-clock me-2"></i> Ежедневно с 10:00 до 21:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+</body>
+</html>
