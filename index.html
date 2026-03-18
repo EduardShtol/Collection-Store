@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hot Wheels Collection Store</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Наш CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-car"></i> Hot Wheels
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
+                    <li class="nav-item"><a class="nav-link" href="catalog.html">Каталог</a></li>
+                    <li class="nav-item"><a class="nav-link" href="order.html">Предзаказ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="ransom.html">Выкуп</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
+    <main>
+        <!-- Главный заголовок -->
+        <section class="hero-section">
+            <div class="container text-center">
+                <h1 class="display-3 fw-bold">Коллекционные Hot Wheels</h1>
+                <p class="lead">Продажа, предзаказ из Америки и Китая, выкуп редких моделей</p>
+                <a href="catalog.html" class="btn btn-primary btn-lg">Смотреть каталог</a>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="container py-5">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-truck fa-3x"></i>
+                        <h3>Доставка из USA</h3>
+                        <p>Прямые поставки из Америки и Китая</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-star fa-3x"></i>
+                        <h3>Редкие модели</h3>
+                        <p>Treasure Hunts и эксклюзивы</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <i class="fas fa-ruble-sign fa-3x"></i>
+                        <h3>Выкуп</h3>
+                        <p>Купим ваши коллекционные модели</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Популярные товары -->
+        <section class="container py-5">
+            <h2 class="section-title">Популярные модели</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="cars/1treasurehunt.jpg" alt="Treasure Hunt">
+                        <h3>Treasure Hunt</h3>
+                        <p class="price">599 ₽</p>
+                        <a href="catalog.html" class="btn btn-outline-primary">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="cars/2RLK_BMW_M3_E46.jpg" alt="BMW M3">
+                        <h3>BMW M3 E46</h3>
+                        <p class="price">1 290 ₽</p>
+                        <a href="catalog.html" class="btn btn-outline-primary">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="product-card">
+                        <img src="cars/3RLK_NISSAN SKYLINE R34.jpg" alt="Nissan Skyline">
+                        <h3>Nissan Skyline R34</h3>
+                        <p class="price">1 990 ₽</p>
+                        <a href="catalog.html" class="btn btn-outline-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Контакты -->
+        <section class="contact-section">
+            <div class="container text-center">
+                <h2>Контакты</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <p><i class="fas fa-phone"></i> <a href="tel:+79857392771">8 (985) 739-27-71</a></p>
+                        <p><i class="fas fa-envelope"></i> <a href="mailto:Ksafikhanov@list.ru">Ksafikhanov@list.ru</a></p>
+                        <p><i class="fas fa-clock"></i> Ежедневно с 10:00 до 21:00</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
