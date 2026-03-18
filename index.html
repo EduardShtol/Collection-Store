@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hot Wheels Collection Store</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Наш CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +14,7 @@
         <div class="loading-spinner"></div>
     </div>
 
-    <!-- Навигация с логотипом -->
+    <!-- Навигация -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
@@ -34,9 +31,28 @@
                     <li class="nav-item"><a class="nav-link" href="order.html">Предзаказ</a></li>
                     <li class="nav-item"><a class="nav-link" href="ransom.html">Выкуп</a></li>
                 </ul>
+                <div class="nav-icons">
+                    <a href="favorites.html" class="nav-icon">
+                        <i class="far fa-heart"></i>
+                        <span class="badge favorites-count">0</span>
+                    </a>
+                    <a href="cart.html" class="nav-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="badge cart-count">0</span>
+                    </a>
+                </div>
             </div>
         </div>
     </nav>
+
+    <!-- Хлебные крошки -->
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Главная</li>
+            </ol>
+        </nav>
+    </div>
 
     <main>
         <!-- Hero секция -->
@@ -50,6 +66,7 @@
 
         <!-- Преимущества -->
         <section class="container py-5">
+            <h2 class="section-title">Почему выбирают нас</h2>
             <div class="row g-4">
                 <div class="col-md-4">
                     <div class="feature-card">
@@ -78,31 +95,9 @@
         <!-- Популярные товары -->
         <section class="container py-5">
             <h2 class="section-title">Популярные модели</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <img src="cars/1treasurehunt.jpg" alt="Treasure Hunt">
-                        <h3>Treasure Hunt</h3>
-                        <p class="price">599 ₽</p>
-                        <a href="catalog.html" class="btn btn-outline-primary">Подробнее</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <img src="cars/2RLK_BMW_M3_E46.jpg" alt="BMW M3">
-                        <h3>BMW M3 E46</h3>
-                        <p class="price">1 290 ₽</p>
-                        <a href="catalog.html" class="btn btn-outline-primary">Подробнее</a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="product-card">
-                        <img src="cars/3RLK_NISSAN SKYLINE R34.jpg" alt="Nissan Skyline">
-                        <h3>Nissan Skyline R34</h3>
-                        <p class="price">1 990 ₽</p>
-                        <a href="catalog.html" class="btn btn-outline-primary">Подробнее</a>
-                    </div>
-                </div>
+            <div class="row g-4" id="popularProducts"></div>
+            <div class="text-center mt-5">
+                <a href="catalog.html" class="btn btn-outline-primary btn-lg">Смотреть весь каталог</a>
             </div>
         </section>
 
@@ -132,27 +127,70 @@
         </section>
     </main>
 
+    <!-- Кнопка переключения темы -->
+    <button class="theme-toggle">
+        <i class="fas fa-moon"></i>
+    </button>
+
     <!-- Кнопка "Наверх" -->
     <a href="#" class="back-to-home" title="Наверх">
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Плавная прокрутка для кнопки "Наверх"
-        document.querySelector('.back-to-home').addEventListener('click', function(e) {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
+    <!-- Чат поддержки -->
+    <div class="chat-widget">
+        <button class="chat-toggle">
+            <i class="fas fa-comment"></i>
+        </button>
+        <div class="chat-window">
+            <div class="chat-header">
+                <i class="fas fa-headset me-2"></i>
+                Чат с поддержкой
+            </div>
+            <div class="chat-messages">
+                <div class="message support">
+                    <div class="message-bubble">
+                        Здравствуйте! Чем мы можем вам помочь?
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Введите сообщение...">
+                <button class="chat-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
 
-        // Убираем загрузочную анимацию после загрузки страницы
-        window.addEventListener('load', function() {
-            setTimeout(function() {
-                document.querySelector('.loading').style.display = 'none';
-            }, 1000);
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Загружаем популярные товары (первые 3)
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('popularProducts');
+            if (container) {
+                const popular = products.slice(0, 3);
+                container.innerHTML = popular.map(product => `
+                    <div class="col-md-4">
+                        <div class="product-card" onclick="window.location.href='product.html?id=${product.id}'">
+                            <img src="${product.image}" alt="${product.name}">
+                            <h3>${product.name}</h3>
+                            <p class="price">${product.price.toLocaleString()} ₽</p>
+                            <div class="card-buttons">
+                                <button class="card-btn favorite-btn ${isFavorite(product.id) ? 'active' : ''}" 
+                                        data-id="${product.id}" 
+                                        onclick="event.stopPropagation(); toggleFavorite(${product.id})">
+                                    <i class="${isFavorite(product.id) ? 'fas' : 'far'} fa-heart"></i>
+                                </button>
+                                <button class="card-btn" onclick="event.stopPropagation(); addToCart(${product.id})">
+                                    <i class="fas fa-shopping-cart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
         });
     </script>
 </body>
