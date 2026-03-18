@@ -11,25 +11,6 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Темная тема */
-.dark-theme {
-    --hw-dark: #ffffff;
-    --hw-gray: #2d2d2d;
-    background: #1a1a1a;
-    color: #fff;
-}
-
-.dark-theme .navbar,
-.dark-theme .product-card,
-.dark-theme .form-container {
-    background: #2d2d2d !important;
-    color: #fff;
-}
-
-.dark-theme .nav-link {
-    color: #fff !important;
-}
-
 * {
     margin: 0;
     padding: 0;
@@ -47,6 +28,399 @@ body {
     background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     min-height: 100vh;
     transition: background-color 0.3s, color 0.3s;
+}
+
+/* ===== ТЕМНАЯ ТЕМА (ИСПРАВЛЕННАЯ) ===== */
+.dark-theme {
+    background: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-theme body {
+    background: #1a1a1a;
+}
+
+.dark-theme .navbar {
+    background: rgba(30, 30, 30, 0.95) !important;
+    backdrop-filter: blur(10px);
+}
+
+.dark-theme .navbar-brand span {
+    color: var(--hw-red);
+}
+
+.dark-theme .nav-link {
+    color: #ffffff !important;
+}
+
+.dark-theme .nav-link:hover,
+.dark-theme .nav-link.active {
+    color: var(--hw-red) !important;
+}
+
+.dark-theme .nav-icon {
+    color: #ffffff;
+}
+
+.dark-theme .nav-icon:hover {
+    color: var(--hw-red);
+}
+
+/* Основные карточки */
+.dark-theme .product-card,
+.dark-theme .feature-card,
+.dark-theme .service-block,
+.dark-theme .form-container,
+.dark-theme .search-section,
+.dark-theme .cart-item,
+.dark-theme .cart-summary,
+.dark-theme .product-gallery,
+.dark-theme .product-info {
+    background: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #404040;
+}
+
+/* Текст в карточках преимуществ - ИСПРАВЛЕНО */
+.dark-theme .feature-card h3 {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+.dark-theme .feature-card p {
+    color: #e0e0e0 !important;
+}
+
+.dark-theme .feature-card .fs-5 {
+    color: #e0e0e0 !important;
+}
+
+.dark-theme .feature-card i {
+    color: var(--hw-red);
+}
+
+/* Текст в карточках товаров */
+.dark-theme .product-card h3 {
+    color: #ffffff !important;
+}
+
+.dark-theme .product-card p {
+    color: #e0e0e0 !important;
+}
+
+.dark-theme .price {
+    color: var(--hw-red) !important;
+}
+
+/* Заголовки */
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3,
+.dark-theme h4,
+.dark-theme .section-title,
+.dark-theme .page-title {
+    color: #ffffff !important;
+}
+
+.dark-theme .section-title:after,
+.dark-theme .page-title:after {
+    background: linear-gradient(90deg, transparent, var(--hw-red), transparent);
+}
+
+/* Формы и инпуты */
+.dark-theme .form-control,
+.dark-theme .form-select,
+.dark-theme .filter-select {
+    background: #3d3d3d;
+    border-color: #555;
+    color: #ffffff;
+}
+
+.dark-theme .form-control:focus,
+.dark-theme .form-select:focus,
+.dark-theme .filter-select:focus {
+    background: #4d4d4d;
+    border-color: var(--hw-red);
+    box-shadow: 0 0 0 4px rgba(255, 0, 0, 0.2);
+}
+
+.dark-theme .form-label {
+    color: #ffffff;
+}
+
+.dark-theme .form-control::placeholder {
+    color: #999;
+}
+
+/* Кнопки */
+.dark-theme .btn-outline-primary {
+    border-color: var(--hw-red);
+    color: var(--hw-red);
+}
+
+.dark-theme .btn-outline-primary:hover {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+.dark-theme .card-btn {
+    border-color: var(--hw-red);
+    color: var(--hw-red);
+}
+
+.dark-theme .card-btn:hover {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+/* Хлебные крошки */
+.dark-theme .breadcrumb-item a {
+    color: var(--hw-red);
+}
+
+.dark-theme .breadcrumb-item.active {
+    color: #aaa;
+}
+
+.dark-theme .breadcrumb-item + .breadcrumb-item::before {
+    color: #666;
+}
+
+/* Текст */
+.dark-theme .text-muted {
+    color: #aaa !important;
+}
+
+.dark-theme .lead {
+    color: #e0e0e0;
+}
+
+/* Контакты */
+.dark-theme .contact-section {
+    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+    color: #ffffff;
+}
+
+.dark-theme .contact-section h2,
+.dark-theme .contact-section p {
+    color: #ffffff;
+}
+
+.dark-theme .contact-section a {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 0, 0, 0.3);
+}
+
+.dark-theme .contact-section a:hover {
+    color: var(--hw-red);
+}
+
+.dark-theme .contact-section i {
+    color: var(--hw-red);
+}
+
+/* Чат */
+.dark-theme .chat-window {
+    background: #2d2d2d;
+    border: 1px solid #404040;
+}
+
+.dark-theme .chat-header {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+.dark-theme .message.support .message-bubble {
+    background: #3d3d3d;
+    color: #ffffff;
+}
+
+.dark-theme .message.user .message-bubble {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+.dark-theme .chat-input input {
+    background: #3d3d3d;
+    border-color: #555;
+    color: #ffffff;
+}
+
+.dark-theme .chat-input input::placeholder {
+    color: #999;
+}
+
+.dark-theme .chat-send {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+/* Кнопки навигации */
+.dark-theme .back-to-home {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+.dark-theme .back-to-home:hover {
+    background: var(--hw-red-dark);
+}
+
+.dark-theme .theme-toggle {
+    background: #2d2d2d;
+    color: #ffffff;
+    border: 1px solid #404040;
+}
+
+/* Корзина */
+.dark-theme .cart-item {
+    background: #2d2d2d;
+}
+
+.dark-theme .cart-item-title,
+.dark-theme .cart-item-price,
+.dark-theme .cart-item-total {
+    color: #ffffff;
+}
+
+.dark-theme .cart-quantity-btn {
+    border-color: var(--hw-red);
+    color: var(--hw-red);
+}
+
+.dark-theme .cart-quantity-btn:hover {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+.dark-theme .cart-item-remove {
+    color: #ff6b6b;
+}
+
+/* Количество товара */
+.dark-theme .quantity-selector {
+    border-color: #555;
+}
+
+.dark-theme .quantity-btn {
+    background: #3d3d3d;
+    color: #ffffff;
+}
+
+.dark-theme .quantity-btn:hover {
+    background: var(--hw-red);
+}
+
+.dark-theme .quantity-input {
+    background: #2d2d2d;
+    color: #ffffff;
+    border-color: #555;
+}
+
+/* Рейтинг */
+.dark-theme .stars i {
+    color: #ffc107;
+}
+
+.dark-theme .rating-count {
+    color: #aaa;
+}
+
+/* Пустые состояния */
+.dark-theme .empty-favorites {
+    background: #2d2d2d;
+    color: #ffffff;
+}
+
+.dark-theme .empty-favorites p {
+    color: #e0e0e0;
+}
+
+.dark-theme .empty-favorites i {
+    color: var(--hw-red);
+}
+
+/* Фильтры */
+.dark-theme .filter-tag {
+    background: var(--hw-red);
+    color: #ffffff;
+}
+
+.dark-theme .filter-tag:hover {
+    background: var(--hw-red-dark);
+}
+
+.dark-theme .active-filters {
+    color: #ffffff;
+}
+
+/* Разделители */
+.dark-theme hr {
+    border-color: #404040;
+}
+
+/* Бейджи */
+.dark-theme .badge.bg-success {
+    background: #28a745 !important;
+    color: #ffffff;
+}
+
+.dark-theme .badge.bg-warning {
+    background: #ffc107 !important;
+    color: #000000;
+}
+
+.dark-theme .badge.bg-danger {
+    background: #dc3545 !important;
+    color: #ffffff;
+}
+
+/* Hero секция в темной теме */
+.dark-theme .hero-section {
+    background: linear-gradient(135deg, #2d2d2d, #1a1a1a);
+}
+
+.dark-theme .hero-section h1,
+.dark-theme .hero-section p {
+    color: #ffffff;
+}
+
+/* Гарантированное исправление для карточек преимуществ */
+.dark-theme .feature-card {
+    background: #2d2d2d !important;
+    border: 1px solid #404040;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.dark-theme .feature-card h3 {
+    color: #ffffff !important;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.dark-theme .feature-card p {
+    color: #e0e0e0 !important;
+    line-height: 1.6;
+}
+
+.dark-theme .feature-card i {
+    color: var(--hw-red) !important;
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Гарантированное исправление для всех текстов */
+.dark-theme p:not(.text-muted):not(.price) {
+    color: #e0e0e0;
+}
+
+.dark-theme .card-text {
+    color: #e0e0e0 !important;
+}
+
+/* Специально для "Почему выбирают нас" */
+.dark-theme .feature-card .fs-5 {
+    color: #e0e0e0 !important;
+    font-size: 1.25rem !important;
 }
 
 /* ===== КНОПКА ПЕРЕКЛЮЧЕНИЯ ТЕМЫ ===== */
@@ -1262,6 +1636,14 @@ body {
         right: 20px;
         width: 50px;
         height: 50px;
+        font-size: 20px;
+    }
+    
+    .theme-toggle {
+        bottom: 90px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
         font-size: 20px;
     }
     
