@@ -13,8 +13,8 @@
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
-                <img src="log.jpg" alt="Collection Store Logo" style="height: 50px; width: auto; border-radius: 10px;">
-                <span>Collection Store</span>
+                <img src="log.jpg" alt="Collection Store" style="height: 50px; width: auto; border-radius: 10px;" onerror="this.style.display='none'">
+                <span class="brand-name">Collection Store</span>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -53,7 +53,6 @@
     <main class="container py-5 catalog-page">
         <h1 class="page-title">Каталог Collection Store</h1>
         
-        <!-- Поиск и фильтры -->
         <div class="search-section">
             <input type="text" id="searchInput" class="search-input" placeholder="🔍 Поиск по названию...">
             
@@ -71,14 +70,10 @@
                     <option value="name">По названию</option>
                     <option value="price-asc">По цене (возрастание)</option>
                     <option value="price-desc">По цене (убывание)</option>
-                    <option value="rating">По рейтингу</option>
                 </select>
             </div>
-            
-            <div class="active-filters" id="activeFilters"></div>
         </div>
         
-        <!-- Товары -->
         <div class="row g-4" id="productsContainer"></div>
     </main>
 
